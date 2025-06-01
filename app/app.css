@@ -146,3 +146,69 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@utility scrollbar-hidden {
+  /* Firefox */
+  scrollbar-width: "none";
+
+  /* Safari and Chrome */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Individual Scroll Bar Classes */
+
+@utility scrollbar-thin {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@utility scrollbar-track-gray {
+  &::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+    border-radius: calc(infinity * 1px);
+  }
+}
+
+@utility scrollbar-thumb-gray {
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gray-400);
+    border-radius: calc(infinity * 1px);
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-500);
+  }
+}
+
+/* Custom CSS for Scrollbar combining multiple classes */
+
+@utility scrollbar-custom {
+  /* Scrollbar width */
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Track styling */
+  &::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+    border-radius: calc(infinity * 1px);
+  }
+
+  /* Thumb styling */
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gray-400);
+    border-radius: calc(infinity * 1px);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-500);
+  }
+
+  /* Firefox support */
+  scrollbar-width: "none";
+  /* scrollbar-color: var(--color-gray-400) var(--color-gray-100); */
+}
